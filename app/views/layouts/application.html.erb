@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title><%= content_for(:title) || "Interview Tracker App" %></title>
+    <title><%= content_for?(:title) ? strip_tags(yield(:title)) : "Interview Tracker App" %></title>
+    <meta name="apple-mobile-web-app-title" content="Interview Tracker App">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable" content="yes">
