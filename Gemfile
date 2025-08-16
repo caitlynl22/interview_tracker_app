@@ -44,3 +44,5 @@ group :test do
   gem "selenium-webdriver", require: false
   gem "shoulda-matchers"
 end
+
+gem "bcrypt", "~> 3.1"
