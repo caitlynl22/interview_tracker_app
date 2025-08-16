@@ -1,40 +1,46 @@
+# frozen_string_literal: true
+
 source "https://rubygems.org"
 
 ruby file: ".ruby-version"
 
-gem "vite_rails", "~> 3.0"
-gem "rails", "~> 8.0.2", ">= 8.0.2.1"
+gem "bootsnap", require: false
+gem "jbuilder"
+gem "kamal", require: false
 gem "pg", "~> 1.1"
 gem "puma", ">= 5.0"
-gem "turbo-rails"
-gem "stimulus-rails"
-gem "jbuilder"
-gem "tzinfo-data", platforms: %i[ windows jruby ]
+gem "rails", "~> 8.0.2", ">= 8.0.2.1"
+gem "solid_cable"
 gem "solid_cache"
 gem "solid_queue"
-gem "solid_cable"
-gem "bootsnap", require: false
-gem "kamal", require: false
+gem "stimulus-rails"
 gem "thruster", require: false
+gem "turbo-rails"
+gem "tzinfo-data", platforms: %i[windows jruby]
+gem "vite_rails", "~> 3.0"
 
 group :development, :test do
-  gem "factory_bot_rails"
-  gem "dotenv", ">= 3.0"
-  gem "rspec-rails"
-  gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
   gem "brakeman", require: false
-  gem "rubocop-rails-omakase", require: false
+  gem "debug", platforms: %i[mri windows], require: "debug/prelude"
+  gem "dotenv", ">= 3.0"
+  gem "factory_bot_rails"
+  gem "rspec-rails"
 end
 
 group :development do
-  gem "rack-mini-profiler"
-  gem "bundler-audit", require: false
   gem "annotaterb"
+  gem "bundler-audit", require: false
+  gem "rack-mini-profiler"
+  gem "rubocop", require: false
+  gem "rubocop-capybara", require: false
+  gem "rubocop-factory_bot", require: false
+  gem "rubocop-performance", require: false
+  gem "rubocop-rails", require: false
   gem "web-console"
 end
 
 group :test do
-  gem "shoulda-matchers"
-  gem "selenium-webdriver", require: false
   gem "capybara", require: false
+  gem "selenium-webdriver", require: false
+  gem "shoulda-matchers"
 end
