@@ -223,6 +223,8 @@ GEM
     raabro (1.4.0)
     racc (1.8.1)
     rack (3.2.0)
+    rack-mini-profiler (4.0.1)
+      rack (>= 1.2.0)
     rack-proxy (0.7.7)
       rack
     rack-session (2.1.1)
@@ -415,6 +417,7 @@ DEPENDENCIES
   kamal
   pg (~> 1.1)
   puma (>= 5.0)
+  rack-mini-profiler
   rails (~> 8.0.2, >= 8.0.2.1)
   rspec-rails
   rubocop-rails-omakase
