@@ -6,6 +6,25 @@ on:
     branches: [ main ]
 
 jobs:
+  stylelint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: ".node-version"
+          cache: npm
+
+      - name: Install npm packages
+        run: npx --yes ci
+
+      - name: Lint CSS files with stylelint
+        run: npm run lint:css
+
   eslint:
     runs-on: ubuntu-latest
 
