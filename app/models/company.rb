@@ -19,4 +19,10 @@
 class Company < ApplicationRecord
   has_many :interviews, dependent: :destroy
   has_many :user_profiles, through: :interviews
+
+  validates :name, presence: true
+  validates :city, presence: true
+  validates :state, presence: true
+  validates :country, presence: true
+  validates :website, presence: true
 end
