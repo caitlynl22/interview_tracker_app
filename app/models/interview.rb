@@ -26,5 +26,7 @@ class Interview < ApplicationRecord
   belongs_to :user_profile
   belongs_to :company
 
-  validates :user_id, uniqueness: { scope: :company_id }
+  validates :user_profile_id, uniqueness: { scope: :company_id }
+  validates :job_title, presence: true
+  validates :completed, inclusion: { in: [true, false] }
 end
