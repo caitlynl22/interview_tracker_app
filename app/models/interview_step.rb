@@ -24,4 +24,9 @@
 #
 class InterviewStep < ApplicationRecord
   belongs_to :interview
+
+  validates :technical, inclusion: { in: [true, false] }
+  validates :position, presence: true, numericality: { only_integer: true }
+  validates :format, presence: true
+  validates :date, presence: true
 end
