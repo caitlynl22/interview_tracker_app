@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_08_21_052838) do
+ActiveRecord::Schema[8.0].define(version: 2025_08_22_041256) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -25,6 +25,18 @@ ActiveRecord::Schema[8.0].define(version: 2025_08_21_052838) do
     t.string "industry"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "interview_steps", force: :cascade do |t|
+    t.boolean "technical"
+    t.integer "position"
+    t.text "description"
+    t.string "format"
+    t.date "date"
+    t.bigint "interview_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["interview_id"], name: "index_interview_steps_on_interview_id"
   end
 
   create_table "interviews", force: :cascade do |t|
@@ -72,6 +84,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_08_21_052838) do
     t.index ["email_address"], name: "index_users_on_email_address", unique: true
   end
 
+  add_foreign_key "interview_steps", "interviews"
   add_foreign_key "interviews", "companies"
   add_foreign_key "interviews", "user_profiles"
   add_foreign_key "sessions", "users"
