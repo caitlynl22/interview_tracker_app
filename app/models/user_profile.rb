@@ -29,4 +29,6 @@
 #
 class UserProfile < ApplicationRecord
   belongs_to :user
+  has_many :interviews, dependent: :destroy
+  has_many :companies, through: :interviews
 end

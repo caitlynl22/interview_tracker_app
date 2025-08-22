@@ -17,4 +17,6 @@
 #  updated_at :datetime         not null
 #
 class Company < ApplicationRecord
+  has_many :interviews, dependent: :destroy
+  has_many :user_profiles, through: :interviews
 end
