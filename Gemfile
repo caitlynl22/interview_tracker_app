@@ -7,7 +7,7 @@ ruby file: ".ruby-version"
 gem "bootsnap", require: false
 gem "jbuilder"
 gem "kamal", require: false
-gem "pg", "~> 1.1"
+gem "pg", "~> 1.6"
 gem "puma", ">= 5.0"
 gem "rails", "~> 8.0.2", ">= 8.0.2.1"
 gem "solid_cable"
